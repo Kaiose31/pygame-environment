@@ -33,6 +33,7 @@ def main():
 
     WIDTH = 1000
     HEIGHT = 800
+    #colors of the env
     BG =  (0,255,0)
     ROAD = (70,70,70)
     screen = pygame.display.set_mode((WIDTH,HEIGHT))
@@ -54,7 +55,9 @@ def main():
 
         #draw road
         pygame.draw.rect(screen,ROAD,(0,HEIGHT/3,WIDTH,HEIGHT/3))   
-
+        #draw start and goal
+        pygame.draw.rect(screen,(255,255,255),(0,HEIGHT/3,WIDTH/15,HEIGHT/3))
+        pygame.draw.rect(screen,(255,255,255),(WIDTH -WIDTH/15,HEIGHT/3,WIDTH,HEIGHT/3))
         Car.draw(screen)
         Car.move()
         pygame.display.update()
